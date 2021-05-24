@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="baidu-tc-verification" content="802abd97cb9d308ac6448b684bf4aa04" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>中国地震台网——首页</title>
+    <link rel="stylesheet" href="http://news.ceic.ac.cn/css/home_min.css">
+    <meta charset="UTF-8">
+    <!--导入google地图css文件-->
+<!--    <link href="http://code.google.com/intl/zh-CN/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css">-->
+    <link href="http://news.ceic.ac.cn/css/default.css" type="text/css" rel="stylesheet">
+    <script>
+        var site_url='http://www.ceic.ac.cn/';
+        var static_html='http://news.ceic.ac.cn/';
+    </script>
+    <link href="http://news.ceic.ac.cn/css/tian_min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="all">
+    <div class="header">
+        <div class="banner">
+            <a href="http://www.ceic.ac.cn/" class="logo"></a>
+        </div>
+    </div><!--header-->
+    <div class="neck">
+        <div class="nav">
+            <ul class="nav-ul">
+                <li class="active"><a href="http://www.ceic.ac.cn/" class="daohang" id="nav-home"></a></li>
+                <li class="usual"><a href="http://news.ceic.ac.cn/zhuanti.html" class="daohang">地震专题</a></li>
+                <li class="usual"><a href="http://www.ceic.ac.cn/speedsearch" class="daohang">快捷查询</a></li>
+                <li class="usual"><a href="http://www.ceic.ac.cn/history" class="daohang">历史查询</a></li>
+                <li class="usual"><a href="http://www.ceic.ac.cn/dataout" class="daohang">地震活动</a></li>
+                <li class="usual"><a href="http://news.ceic.ac.cn/about.html" class="daohang">关于我们</a></li>
+            </ul>
+        </div>
+    </div><!--neck-->
+    <div class="main">
+        <div class="content">
+            <div class="left">
+                <div class="map-border">
+                    <div class="map-nav">
+                        <ul class="map-ul" id="map-ul">
+                           
+                            <li id="map-active"><a href="javascript:void(0)" id="baidu">百度地图</a></li>
+                            <li ><a href="javascript:void(0)" id="sky">天地图</a></li>
+                        </ul>
+                    </div>
+                    <div class="map-f">
+                        <div class="map" id="map1" style="width: 100%;height: 100%;display: none"></div>
+                        <div class="map" id="map2" style="width: 100%;height: 100%;"></div>
+                        <div class="map" id="map3" style="width: 100%;height: 100%;display: none"></div>
+                        <div id="btn" style="position: absolute;top:15px;right:15px;display: none;">
+                            <input onclick="switchGroup(vectorGroup);" value="地图" type="button"><input onclick="switchGroup(imageGroup);" value="卫星" type="button"><input onclick="switchGroup(dxGroup);" value="地形" type="button">
+                        </div>
+                        <div id="Markers" ></div>
+                    </div>
+
+                </div>
+                <div class="notes"></div>
+
+                <div class="news">
+                    <div class="news-h1">
+
+                        <ul class="speedtitle">
+                            <li>最近一年地震:</li>
+                            <li><a href="http://www.ceic.ac.cn/speedsearch?time=10">6.0级以上地震</a></li>
+                            <li><a href="http://www.ceic.ac.cn/speedsearch?time=9">5.0级以上地震</a></li>
+                            <li><a href="http://www.ceic.ac.cn/speedsearch?time=8">4.0级以上地震</a></li>
+                            <li><a href="http://www.ceic.ac.cn/speedsearch?time=5">3.0级以上地震</a></li>
+                            <li><a href="http://www.ceic.ac.cn/speedsearch?time=7">3.0级以下地震</a></li>
+                        </ul>
+                    </div>
+                </div>
+<!--                <div style="text-align: center;">-->
+<!--                    <a style="background: blue;border: 1px solid blue;border-radius: 5px;font-size:18px;line-height: 30px;color: white;text-decoration:none;margin:0 0 10px 0;display:inline-block;padding:0 14px;" href="http://developer.baidu.com/map/news/gy/" target="_blank">防震减震知识科普活动</a>-->
+<!--                </div>-->
+                <div class="news-content" id="news">
+                    <table width="721" border="0" cellpadding="0" cellspacing="0" class="news-table">
+                        <tr class="news-tr-h1">
+                            <th width="60" align="center" style="padding-left: 20px">震级(M)</th>
+                            <th width="126" align="center">发震时刻(UTC+8)</th>
+                            <th width="60" align="center">纬度(°)</th>
+                            <th width="60" align="center">经度(°)</th>
+                            <th width="79" align="center">深度(千米)</th>
+                            <th width="260" align="center">参考位置</th>
+                            <!--    <th width="85">操作</th>-->
+                        </tr>
+                                                                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-24 08:43:10</td>
+                        <td align="center">25.59</td>
+                        <td align="center">100.01</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210524084310.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-24 08:10:58</td>
+                        <td align="center">25.59</td>
+                        <td align="center">100.00</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210524081058.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.7</td>
+                        <td align="center" style="width: 155px;">2021-05-24 07:23:41</td>
+                        <td align="center">34.70</td>
+                        <td align="center">98.25</td>
+                        <td align="center">11</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210524072342.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">2.3</td>
+                        <td align="center" style="width: 155px;">2021-05-24 01:50:52</td>
+                        <td align="center">38.77</td>
+                        <td align="center">118.70</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210524015053.html">河北唐山市滦南县海域</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.5</td>
+                        <td align="center" style="width: 155px;">2021-05-23 16:35:45</td>
+                        <td align="center">34.51</td>
+                        <td align="center">98.63</td>
+                        <td align="center">11</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210523163545.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.0</td>
+                        <td align="center" style="width: 155px;">2021-05-23 15:24:31</td>
+                        <td align="center">34.48</td>
+                        <td align="center">99.06</td>
+                        <td align="center">11</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210523152432.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-23 12:12:12</td>
+                        <td align="center">34.49</td>
+                        <td align="center">98.72</td>
+                        <td align="center">11</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210523121213.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.9</td>
+                        <td align="center" style="width: 155px;">2021-05-23 11:46:52</td>
+                        <td align="center">34.44</td>
+                        <td align="center">99.14</td>
+                        <td align="center">11</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210523114653.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.5</td>
+                        <td align="center" style="width: 155px;">2021-05-23 10:02:10</td>
+                        <td align="center">4.90</td>
+                        <td align="center">127.50</td>
+                        <td align="center">120</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210523100211.html">印尼塔劳群岛</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">2.9</td>
+                        <td align="center" style="width: 155px;">2021-05-23 00:17:19</td>
+                        <td align="center">25.59</td>
+                        <td align="center">99.99</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210523001720.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 23:46:13</td>
+                        <td align="center">34.42</td>
+                        <td align="center">99.11</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522234614.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">2.9</td>
+                        <td align="center" style="width: 155px;">2021-05-22 23:30:16</td>
+                        <td align="center">25.57</td>
+                        <td align="center">99.96</td>
+                        <td align="center">12</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522233016.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 23:24:54</td>
+                        <td align="center">34.83</td>
+                        <td align="center">97.52</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522232454.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-22 22:30:05</td>
+                        <td align="center">25.60</td>
+                        <td align="center">99.93</td>
+                        <td align="center">11</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522223005.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 22:01:12</td>
+                        <td align="center">34.63</td>
+                        <td align="center">98.52</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522220112.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 20:32:41</td>
+                        <td align="center">34.72</td>
+                        <td align="center">98.09</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522203241.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 20:14:36</td>
+                        <td align="center">25.61</td>
+                        <td align="center">99.93</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522201437.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 17:39:34</td>
+                        <td align="center">34.77</td>
+                        <td align="center">97.65</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522173934.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 17:24:16</td>
+                        <td align="center">25.66</td>
+                        <td align="center">99.90</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522172417.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 17:20:24</td>
+                        <td align="center">34.71</td>
+                        <td align="center">98.07</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522172025.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.8</td>
+                        <td align="center" style="width: 155px;">2021-05-22 15:06:22</td>
+                        <td align="center">34.51</td>
+                        <td align="center">98.92</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522150622.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 12:59:03</td>
+                        <td align="center">34.75</td>
+                        <td align="center">97.69</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522125904.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 12:03:35</td>
+                        <td align="center">35.63</td>
+                        <td align="center">99.12</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522120335.html">青海海西州都兰县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 11:30:43</td>
+                        <td align="center">34.28</td>
+                        <td align="center">100.90</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522113044.html">甘肃甘南州玛曲县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.7</td>
+                        <td align="center" style="width: 155px;">2021-05-22 11:21:16</td>
+                        <td align="center">34.72</td>
+                        <td align="center">98.07</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522112117.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.5</td>
+                        <td align="center" style="width: 155px;">2021-05-22 11:16:11</td>
+                        <td align="center">34.72</td>
+                        <td align="center">98.08</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522111611.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.6</td>
+                        <td align="center" style="width: 155px;">2021-05-22 11:07:12</td>
+                        <td align="center">36.85</td>
+                        <td align="center">75.86</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522110712.html">新疆喀什地区塔什库尔干县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 10:42:16</td>
+                        <td align="center">34.74</td>
+                        <td align="center">97.98</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522104217.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.9</td>
+                        <td align="center" style="width: 155px;">2021-05-22 10:38:44</td>
+                        <td align="center">34.55</td>
+                        <td align="center">98.94</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522103844.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 10:29:34</td>
+                        <td align="center">34.85</td>
+                        <td align="center">97.50</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522102934.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 09:48:00</td>
+                        <td align="center">25.67</td>
+                        <td align="center">99.90</td>
+                        <td align="center">12</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522094801.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 08:36:46</td>
+                        <td align="center">25.68</td>
+                        <td align="center">99.90</td>
+                        <td align="center">12</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522083647.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.6</td>
+                        <td align="center" style="width: 155px;">2021-05-22 07:59:00</td>
+                        <td align="center">33.29</td>
+                        <td align="center">110.80</td>
+                        <td align="center">17</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522075900.html">陕西商洛市商南县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" style="background-color: #eeeeee;font-weight: bold;">
+
+                            
+                        <td align="center" style="padding-left: 20px">6.5</td>
+                        <td align="center" style="width: 155px;">2021-05-22 06:13:14</td>
+                        <td align="center">-16.47</td>
+                        <td align="center">-177.19</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522061314.html">斐济群岛地区</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.6</td>
+                        <td align="center" style="width: 155px;">2021-05-22 05:59:34</td>
+                        <td align="center">34.64</td>
+                        <td align="center">98.46</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522055935.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.7</td>
+                        <td align="center" style="width: 155px;">2021-05-22 05:09:10</td>
+                        <td align="center">34.47</td>
+                        <td align="center">99.25</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522050911.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">2.9</td>
+                        <td align="center" style="width: 155px;">2021-05-22 05:08:21</td>
+                        <td align="center">25.63</td>
+                        <td align="center">99.96</td>
+                        <td align="center">12</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522050821.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 04:36:13</td>
+                        <td align="center">34.64</td>
+                        <td align="center">98.53</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522043613.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 04:23:58</td>
+                        <td align="center">34.47</td>
+                        <td align="center">99.05</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522042358.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 04:13:13</td>
+                        <td align="center">34.47</td>
+                        <td align="center">99.10</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522041314.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 04:10:57</td>
+                        <td align="center">25.62</td>
+                        <td align="center">99.95</td>
+                        <td align="center">12</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522041057.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 04:05:18</td>
+                        <td align="center">34.29</td>
+                        <td align="center">101.92</td>
+                        <td align="center">19</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522040518.html">青海黄南州河南县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 04:04:28</td>
+                        <td align="center">34.52</td>
+                        <td align="center">98.64</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522040429.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.6</td>
+                        <td align="center" style="width: 155px;">2021-05-22 03:49:13</td>
+                        <td align="center">34.74</td>
+                        <td align="center">98.01</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522034914.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 03:47:00</td>
+                        <td align="center">34.74</td>
+                        <td align="center">98.05</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522034701.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 03:22:37</td>
+                        <td align="center">34.58</td>
+                        <td align="center">98.52</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522032238.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 03:16:37</td>
+                        <td align="center">34.47</td>
+                        <td align="center">99.08</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522031638.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.6</td>
+                        <td align="center" style="width: 155px;">2021-05-22 03:14:44</td>
+                        <td align="center">33.74</td>
+                        <td align="center">100.93</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522031445.html">青海果洛州久治县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.9</td>
+                        <td align="center" style="width: 155px;">2021-05-22 03:09:17</td>
+                        <td align="center">34.74</td>
+                        <td align="center">97.96</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522030917.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 03:03:06</td>
+                        <td align="center">34.46</td>
+                        <td align="center">99.07</td>
+                        <td align="center">5</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522030306.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:50:57</td>
+                        <td align="center">34.48</td>
+                        <td align="center">98.92</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522025058.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:49:21</td>
+                        <td align="center">34.40</td>
+                        <td align="center">99.11</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522024922.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.8</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:43:25</td>
+                        <td align="center">34.48</td>
+                        <td align="center">99.13</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522024326.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:38:30</td>
+                        <td align="center">34.69</td>
+                        <td align="center">98.39</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522023830.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.6</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:36:00</td>
+                        <td align="center">34.64</td>
+                        <td align="center">98.40</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522023601.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:30:29</td>
+                        <td align="center">34.39</td>
+                        <td align="center">98.98</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522023030.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.9</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:28:43</td>
+                        <td align="center">25.62</td>
+                        <td align="center">99.91</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522022844.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:25:03</td>
+                        <td align="center">34.44</td>
+                        <td align="center">99.05</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522022504.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:24:27</td>
+                        <td align="center">25.66</td>
+                        <td align="center">99.88</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522022427.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.9</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:16:32</td>
+                        <td align="center">34.45</td>
+                        <td align="center">99.04</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522021632.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:15:08</td>
+                        <td align="center">34.43</td>
+                        <td align="center">99.10</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522021509.html">青海果洛州玛沁县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" style="background-color: #eeeeee;font-weight: bold;">
+
+                            
+                        <td align="center" style="padding-left: 20px">7.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 02:04:11</td>
+                        <td align="center">34.59</td>
+                        <td align="center">98.34</td>
+                        <td align="center">17</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522020411.html">青海果洛州玛多县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 01:50:17</td>
+                        <td align="center">25.61</td>
+                        <td align="center">100.00</td>
+                        <td align="center">14</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522015018.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-22 01:38:04</td>
+                        <td align="center">28.09</td>
+                        <td align="center">105.30</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522013804.html">四川泸州市叙永县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.5</td>
+                        <td align="center" style="width: 155px;">2021-05-22 01:36:06</td>
+                        <td align="center">25.62</td>
+                        <td align="center">99.94</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522013606.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-22 00:56:07</td>
+                        <td align="center">25.63</td>
+                        <td align="center">99.91</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522005608.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-22 00:53:31</td>
+                        <td align="center">25.65</td>
+                        <td align="center">99.91</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210522005331.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 00:51:41</td>
+                        <td align="center">25.70</td>
+                        <td align="center">99.87</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522005141.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-22 00:24:05</td>
+                        <td align="center">25.69</td>
+                        <td align="center">99.87</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522002405.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.3</td>
+                        <td align="center" style="width: 155px;">2021-05-22 00:02:36</td>
+                        <td align="center">-2.70</td>
+                        <td align="center">68.20</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210522000237.html">中印度洋海岭</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.5</td>
+                        <td align="center" style="width: 155px;">2021-05-21 23:23:34</td>
+                        <td align="center">25.60</td>
+                        <td align="center">99.98</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521232335.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.5</td>
+                        <td align="center" style="width: 155px;">2021-05-21 23:22:49</td>
+                        <td align="center">25.66</td>
+                        <td align="center">99.88</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521232249.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-21 23:18:09</td>
+                        <td align="center">25.62</td>
+                        <td align="center">99.98</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521231810.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.8</td>
+                        <td align="center" style="width: 155px;">2021-05-21 23:13:53</td>
+                        <td align="center">25.64</td>
+                        <td align="center">99.94</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521231354.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-21 23:08:57</td>
+                        <td align="center">25.61</td>
+                        <td align="center">99.98</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521230858.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.5</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:59:37</td>
+                        <td align="center">25.63</td>
+                        <td align="center">99.94</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521225937.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">2.9</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:52:08</td>
+                        <td align="center">25.61</td>
+                        <td align="center">99.97</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521225208.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.2</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:31:10</td>
+                        <td align="center">25.59</td>
+                        <td align="center">99.97</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521223111.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:30:27</td>
+                        <td align="center">25.65</td>
+                        <td align="center">99.90</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521223027.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:19:48</td>
+                        <td align="center">25.60</td>
+                        <td align="center">99.95</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521221948.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.0</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:15:16</td>
+                        <td align="center">25.59</td>
+                        <td align="center">99.96</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521221516.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.9</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:03:36</td>
+                        <td align="center">25.57</td>
+                        <td align="center">99.93</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521220336.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.1</td>
+                        <td align="center" style="width: 155px;">2021-05-21 22:02:00</td>
+                        <td align="center">25.66</td>
+                        <td align="center">99.89</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521220201.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.9</td>
+                        <td align="center" style="width: 155px;">2021-05-21 21:56:37</td>
+                        <td align="center">25.64</td>
+                        <td align="center">99.95</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521215638.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.0</td>
+                        <td align="center" style="width: 155px;">2021-05-21 21:55:28</td>
+                        <td align="center">25.67</td>
+                        <td align="center">99.89</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521215529.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.1</td>
+                        <td align="center" style="width: 155px;">2021-05-21 21:53:47</td>
+                        <td align="center">25.62</td>
+                        <td align="center">99.98</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521215348.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" value="87">
+                            
+                        <td align="center" style="padding-left: 20px">6.4</td>
+                        <td align="center" style="width: 155px;">2021-05-21 21:48:34</td>
+                        <td align="center">25.67</td>
+                        <td align="center">99.87</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521214835.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">2.8</td>
+                        <td align="center" style="width: 155px;">2021-05-21 21:37:33</td>
+                        <td align="center">25.61</td>
+                        <td align="center">99.95</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521213734.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.5</td>
+                        <td align="center" style="width: 155px;">2021-05-21 21:23:43</td>
+                        <td align="center">25.66</td>
+                        <td align="center">99.97</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521212344.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.6</td>
+                        <td align="center" style="width: 155px;">2021-05-21 21:21:25</td>
+                        <td align="center">25.63</td>
+                        <td align="center">99.92</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521212125.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.2</td>
+                        <td align="center" style="width: 155px;">2021-05-21 20:56:02</td>
+                        <td align="center">25.63</td>
+                        <td align="center">99.93</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521205603.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.7</td>
+                        <td align="center" style="width: 155px;">2021-05-21 20:09:21</td>
+                        <td align="center">-8.62</td>
+                        <td align="center">112.36</td>
+                        <td align="center">110</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521200922.html">印尼爪哇岛以南海域</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-21 13:32:30</td>
+                        <td align="center">35.85</td>
+                        <td align="center">77.89</td>
+                        <td align="center">110</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210521133230.html">新疆和田地区皮山县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.5</td>
+                        <td align="center" style="width: 155px;">2021-05-21 09:37:34</td>
+                        <td align="center">-9.96</td>
+                        <td align="center">160.40</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210521093735.html">所罗门群岛</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-20 22:21:16</td>
+                        <td align="center">43.44</td>
+                        <td align="center">81.43</td>
+                        <td align="center">22</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210520222117.html">新疆伊犁州察布查尔县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-20 14:29:05</td>
+                        <td align="center">28.43</td>
+                        <td align="center">104.78</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210520142906.html">四川宜宾市珙县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-20 01:58:59</td>
+                        <td align="center">25.67</td>
+                        <td align="center">99.90</td>
+                        <td align="center">11</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210520015859.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.3</td>
+                        <td align="center" style="width: 155px;">2021-05-19 23:06:54</td>
+                        <td align="center">-28.45</td>
+                        <td align="center">-63.25</td>
+                        <td align="center">600</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210519230654.html">阿根廷</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-19 21:13:07</td>
+                        <td align="center">25.68</td>
+                        <td align="center">99.89</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210519211308.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.4</td>
+                        <td align="center" style="width: 155px;">2021-05-19 20:05:56</td>
+                        <td align="center">25.66</td>
+                        <td align="center">99.92</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210519200557.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-19 09:31:59</td>
+                        <td align="center">43.13</td>
+                        <td align="center">81.87</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210519093160.html">新疆伊犁州特克斯县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" style="background-color: #eeeeee;font-weight: bold;">
+
+                            
+                        <td align="center" style="padding-left: 20px">6.6</td>
+                        <td align="center" style="width: 155px;">2021-05-19 08:42:19</td>
+                        <td align="center">-33.15</td>
+                        <td align="center">-109.40</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210519084220.html">东太平洋海岭南部</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.3</td>
+                        <td align="center" style="width: 155px;">2021-05-19 04:38:36</td>
+                        <td align="center">32.95</td>
+                        <td align="center">98.91</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210519043836.html">四川甘孜州石渠县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-19 03:27:56</td>
+                        <td align="center">25.65</td>
+                        <td align="center">99.92</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210519032756.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.2</td>
+                        <td align="center" style="width: 155px;">2021-05-18 21:39:35</td>
+                        <td align="center">25.65</td>
+                        <td align="center">99.93</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210518213936.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-18 20:56:46</td>
+                        <td align="center">25.65</td>
+                        <td align="center">99.93</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210518205646.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-18 18:53:30</td>
+                        <td align="center">37.59</td>
+                        <td align="center">76.02</td>
+                        <td align="center">112</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210518185331.html">新疆喀什地区塔什库尔干县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-18 18:49:30</td>
+                        <td align="center">25.65</td>
+                        <td align="center">99.93</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210518184930.html">云南大理州漾濞县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.6</td>
+                        <td align="center" style="width: 155px;">2021-05-17 12:37:26</td>
+                        <td align="center">31.91</td>
+                        <td align="center">92.69</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210517123726.html">西藏那曲市比如县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.2</td>
+                        <td align="center" style="width: 155px;">2021-05-17 08:54:02</td>
+                        <td align="center">37.55</td>
+                        <td align="center">56.65</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210517085403.html">伊朗</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-17 07:36:22</td>
+                        <td align="center">36.45</td>
+                        <td align="center">82.54</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210517073623.html">新疆和田地区于田县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.3</td>
+                        <td align="center" style="width: 155px;">2021-05-17 07:04:55</td>
+                        <td align="center">37.35</td>
+                        <td align="center">56.70</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210517070456.html">伊朗</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-17 00:45:20</td>
+                        <td align="center">45.07</td>
+                        <td align="center">80.58</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210517004520.html">新疆博尔塔拉州温泉县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-16 15:05:25</td>
+                        <td align="center">35.71</td>
+                        <td align="center">79.72</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210516150525.html">新疆和田地区和田县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.8</td>
+                        <td align="center" style="width: 155px;">2021-05-16 11:23:52</td>
+                        <td align="center">41.95</td>
+                        <td align="center">144.80</td>
+                        <td align="center">20</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210516112352.html">日本北海道附近海域</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.6</td>
+                        <td align="center" style="width: 155px;">2021-05-14 17:54:04</td>
+                        <td align="center">39.46</td>
+                        <td align="center">73.15</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210514175405.html">吉尔吉斯斯坦</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">2.9</td>
+                        <td align="center" style="width: 155px;">2021-05-14 01:25:49</td>
+                        <td align="center">32.57</td>
+                        <td align="center">105.24</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210514012549.html">四川广元市青川县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.6</td>
+                        <td align="center" style="width: 155px;">2021-05-13 21:31:33</td>
+                        <td align="center">-16.05</td>
+                        <td align="center">-177.25</td>
+                        <td align="center">420</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210513213134.html">斐济群岛地区</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.7</td>
+                        <td align="center" style="width: 155px;">2021-05-13 17:42:11</td>
+                        <td align="center">6.80</td>
+                        <td align="center">-82.35</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210513174212.html">巴拿马以南海域</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.7</td>
+                        <td align="center" style="width: 155px;">2021-05-13 11:42:36</td>
+                        <td align="center">24.43</td>
+                        <td align="center">99.24</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210513114236.html">云南保山市施甸县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.1</td>
+                        <td align="center" style="width: 155px;">2021-05-12 22:37:06</td>
+                        <td align="center">37.12</td>
+                        <td align="center">85.08</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210512223706.html">新疆巴音郭楞州且末县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" style="background-color: #eeeeee;font-weight: bold;">
+
+                            
+                        <td align="center" style="padding-left: 20px">6.5</td>
+                        <td align="center" style="width: 155px;">2021-05-12 22:05:15</td>
+                        <td align="center">-17.30</td>
+                        <td align="center">66.50</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210512220515.html">毛里求斯远海海域</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.7</td>
+                        <td align="center" style="width: 155px;">2021-05-12 16:45:47</td>
+                        <td align="center">13.40</td>
+                        <td align="center">-90.25</td>
+                        <td align="center">60</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210512164547.html">危地马拉沿岸近海</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.3</td>
+                        <td align="center" style="width: 155px;">2021-05-12 14:17:08</td>
+                        <td align="center">13.40</td>
+                        <td align="center">-90.35</td>
+                        <td align="center">60</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210512141708.html">危地马拉沿岸近海</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.6</td>
+                        <td align="center" style="width: 155px;">2021-05-12 09:09:25</td>
+                        <td align="center">13.60</td>
+                        <td align="center">120.85</td>
+                        <td align="center">100</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210512090926.html">菲律宾</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.2</td>
+                        <td align="center" style="width: 155px;">2021-05-11 23:27:35</td>
+                        <td align="center">-5.25</td>
+                        <td align="center">151.10</td>
+                        <td align="center">130</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210511232735.html">新不列颠岛地区</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.7</td>
+                        <td align="center" style="width: 155px;">2021-05-11 06:14:38</td>
+                        <td align="center">32.50</td>
+                        <td align="center">96.25</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210511061439.html">青海玉树州囊谦县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-10 22:44:40</td>
+                        <td align="center">32.01</td>
+                        <td align="center">102.70</td>
+                        <td align="center">17</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210510224440.html">四川阿坝州黑水县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.4</td>
+                        <td align="center" style="width: 155px;">2021-05-08 22:07:34</td>
+                        <td align="center">41.24</td>
+                        <td align="center">83.78</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210508220735.html">新疆阿克苏地区库车市</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-08 10:53:51</td>
+                        <td align="center">43.36</td>
+                        <td align="center">80.81</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210508105351.html">新疆伊犁州察布查尔县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" value="131">
+                            
+                        <td align="center" style="padding-left: 20px">6.1</td>
+                        <td align="center" style="width: 155px;">2021-05-08 07:35:11</td>
+                        <td align="center">-18.75</td>
+                        <td align="center">-177.30</td>
+                        <td align="center">370</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210508073511.html">斐济群岛地区</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.3</td>
+                        <td align="center" style="width: 155px;">2021-05-08 05:24:16</td>
+                        <td align="center">22.66</td>
+                        <td align="center">120.85</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210508052416.html">台湾台东县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.8</td>
+                        <td align="center" style="width: 155px;">2021-05-07 23:21:16</td>
+                        <td align="center">-54.50</td>
+                        <td align="center">144.00</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210507232117.html">麦夸里岛以西海域</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.3</td>
+                        <td align="center" style="width: 155px;">2021-05-07 19:45:25</td>
+                        <td align="center">14.10</td>
+                        <td align="center">-48.27</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210507194525.html">北大西洋</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-05-05 15:54:16</td>
+                        <td align="center">40.86</td>
+                        <td align="center">78.17</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210505155417.html">新疆克孜勒苏州阿合奇县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.6</td>
+                        <td align="center" style="width: 155px;">2021-05-05 09:51:05</td>
+                        <td align="center">32.40</td>
+                        <td align="center">104.02</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210505095106.html">四川绵阳市平武县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.8</td>
+                        <td align="center" style="width: 155px;">2021-05-05 09:24:31</td>
+                        <td align="center">-2.25</td>
+                        <td align="center">99.50</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210505092431.html">印尼苏门答腊岛南部海域</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.1</td>
+                        <td align="center" style="width: 155px;">2021-05-05 06:59:13</td>
+                        <td align="center">1.45</td>
+                        <td align="center">127.20</td>
+                        <td align="center">130</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210505065914.html">印尼哈马黑拉岛附近海域</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-05-04 05:57:15</td>
+                        <td align="center">38.35</td>
+                        <td align="center">75.70</td>
+                        <td align="center">131</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210504055716.html">新疆克孜勒苏州阿克陶县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.0</td>
+                        <td align="center" style="width: 155px;">2021-05-03 19:42:39</td>
+                        <td align="center">36.62</td>
+                        <td align="center">94.16</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210503194239.html">青海海西州格尔木市</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.5</td>
+                        <td align="center" style="width: 155px;">2021-05-03 13:07:29</td>
+                        <td align="center">25.65</td>
+                        <td align="center">123.95</td>
+                        <td align="center">200</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210503130730.html">琉球群岛</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.8</td>
+                        <td align="center" style="width: 155px;">2021-05-02 14:57:39</td>
+                        <td align="center">-30.10</td>
+                        <td align="center">-71.50</td>
+                        <td align="center">50</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210502145739.html">智利附近海域</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">2.8</td>
+                        <td align="center" style="width: 155px;">2021-05-01 21:17:03</td>
+                        <td align="center">25.97</td>
+                        <td align="center">100.86</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210501211704.html">云南大理州宾川县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-05-01 19:53:19</td>
+                        <td align="center">29.03</td>
+                        <td align="center">95.54</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210501195319.html">西藏林芝市墨脱县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" value="145">
+                            
+                        <td align="center" style="padding-left: 20px">6.6</td>
+                        <td align="center" style="width: 155px;">2021-05-01 09:27:26</td>
+                        <td align="center">38.25</td>
+                        <td align="center">141.90</td>
+                        <td align="center">30</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210501092727.html">日本本州东岸近海</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">2.8</td>
+                        <td align="center" style="width: 155px;">2021-05-01 04:19:33</td>
+                        <td align="center">23.74</td>
+                        <td align="center">114.61</td>
+                        <td align="center">6</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210501041933.html">广东河源市源城区</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-04-30 14:00:38</td>
+                        <td align="center">30.65</td>
+                        <td align="center">103.22</td>
+                        <td align="center">9</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210430140039.html">四川成都市大邑县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.2</td>
+                        <td align="center" style="width: 155px;">2021-04-29 22:32:58</td>
+                        <td align="center">21.78</td>
+                        <td align="center">121.72</td>
+                        <td align="center">15</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210429223258.html">台湾屏东县海域</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-04-29 17:40:31</td>
+                        <td align="center">22.57</td>
+                        <td align="center">100.32</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210429174031.html">云南普洱市澜沧县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" style="background-color: #eeeeee;font-weight: bold;">
+
+                            
+                        <td align="center" style="padding-left: 20px">6.1</td>
+                        <td align="center" style="width: 155px;">2021-04-29 14:50:29</td>
+                        <td align="center">-29.10</td>
+                        <td align="center">-176.80</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210429145029.html">新西兰克马德克群岛</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-04-29 09:43:07</td>
+                        <td align="center">30.06</td>
+                        <td align="center">103.09</td>
+                        <td align="center">28</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210429094308.html">四川雅安市名山区</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.9</td>
+                        <td align="center" style="width: 155px;">2021-04-28 19:43:36</td>
+                        <td align="center">34.68</td>
+                        <td align="center">90.95</td>
+                        <td align="center">7</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210428194336.html">青海海西州唐古拉地区</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.2</td>
+                        <td align="center" style="width: 155px;">2021-04-28 06:10:53</td>
+                        <td align="center">23.14</td>
+                        <td align="center">120.95</td>
+                        <td align="center">12</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210428061053.html">台湾台东县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.9</td>
+                        <td align="center" style="width: 155px;">2021-04-28 00:33:35</td>
+                        <td align="center">-29.30</td>
+                        <td align="center">-176.75</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210428003336.html">新西兰克马德克群岛</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">4.0</td>
+                        <td align="center" style="width: 155px;">2021-04-27 19:43:17</td>
+                        <td align="center">35.59</td>
+                        <td align="center">89.80</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210427194318.html">青海玉树州治多县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.3</td>
+                        <td align="center" style="width: 155px;">2021-04-27 19:04:23</td>
+                        <td align="center">-3.30</td>
+                        <td align="center">145.60</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210427190424.html">巴布亚新几内亚附近海域</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" value="157">
+                            
+                        <td align="center" style="padding-left: 20px">6.0</td>
+                        <td align="center" style="width: 155px;">2021-04-27 16:05:30</td>
+                        <td align="center">-3.50</td>
+                        <td align="center">145.55</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210427160530.html">巴布亚新几内亚附近海域</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.9</td>
+                        <td align="center" style="width: 155px;">2021-04-27 13:16:57</td>
+                        <td align="center">37.45</td>
+                        <td align="center">75.78</td>
+                        <td align="center">100</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210427131658.html">新疆喀什地区塔什库尔干县</a></td>
+</tr>
+
+                                                                                    <tr style="font-weight: bold;" >
+                            
+                        <td align="center" style="padding-left: 20px">5.3</td>
+                        <td align="center" style="width: 155px;">2021-04-27 10:12:48</td>
+                        <td align="center">-3.40</td>
+                        <td align="center">145.60</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210427101248.html">巴布亚新几内亚附近海域</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.2</td>
+                        <td align="center" style="width: 155px;">2021-04-26 21:30:15</td>
+                        <td align="center">28.18</td>
+                        <td align="center">104.97</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210426213016.html">四川宜宾市兴文县</a></td>
+</tr>
+
+                                                                                    <tr class="tr-red" value="161">
+                            
+                        <td align="center" style="padding-left: 20px">6.3</td>
+                        <td align="center" style="width: 155px;">2021-04-26 06:28:00</td>
+                        <td align="center">-21.60</td>
+                        <td align="center">-177.05</td>
+                        <td align="center">240</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CC20210426062801.html">斐济群岛地区</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">2.9</td>
+                        <td align="center" style="width: 155px;">2021-04-26 04:00:26</td>
+                        <td align="center">28.09</td>
+                        <td align="center">101.19</td>
+                        <td align="center">15</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210426040027.html">四川凉山州木里县</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-04-25 23:11:21</td>
+                        <td align="center">42.96</td>
+                        <td align="center">125.64</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210425231121.html">吉林辽源市东丰县</a></td>
+</tr>
+
+                                                                                    <tr style="background-color: #eeeeee;" >
+                            
+                        <td align="center" style="padding-left: 20px">3.0</td>
+                        <td align="center" style="width: 155px;">2021-04-25 10:44:43</td>
+                        <td align="center">41.20</td>
+                        <td align="center">83.66</td>
+                        <td align="center">8</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210425104443.html">新疆阿克苏地区库车市</a></td>
+</tr>
+
+                                                                                    <tr>
+                            
+                        <td align="center" style="padding-left: 20px">3.1</td>
+                        <td align="center" style="width: 155px;">2021-04-24 18:10:56</td>
+                        <td align="center">42.95</td>
+                        <td align="center">85.95</td>
+                        <td align="center">10</td>
+                        <td align="left"><a href="http://news.ceic.ac.cn/CD20210424181056.html">新疆巴音郭楞州和静县</a></td>
+</tr>
+
+
+                    </table>
+                </div>
+            </div><!--left-->
+            <div class="right">
+                
+                <a href="http://weibo.com/ceic" class="weibo sina" target="_blank"></a>
+
+                <div class="phone">
+                    <a href="http://news.ceic.ac.cn/IOS.html" target="_blank" class="downphone"></a>
+                </div>
+                <div class="modular">
+                    <h1 class="modular-h1">全球最新地震分布</h1>
+                    <ul class="modular-ul">
+                        <li><a href="http://www.ceic.ac.cn/world" target="_blank">最近一周全球地震活动分布（含USGS结果）</a></li>
+                    </ul>
+                </div><!--modular-->
+                <div class="modular">
+                    <h1 class="modular-h1">地震专题</h1>
+                    <ul class="modular-ul">
+                                                <li><a href="http://news.ceic.ac.cn/CC20200722141242.html">2020-07-22 14:12:41 美国阿拉斯加州以南海域7.8级地震</a></li>
+
+                                                <li><a href="http://news.ceic.ac.cn/CC20160121011313.html">2016-01-21 01:13:13 青海海北州门源县6.4级地震</a></li>
+
+                                                <li><a href="http://news.ceic.ac.cn/CC20150114132139.html">2015-01-14 13:21:39 四川省乐山市金口河区5.0级地震</a></li>
+
+                                                <li><a href="http://news.ceic.ac.cn/CC20141211050345.html">2014-12-11 05:03:44 台湾新北市附近海域6.2级地震</a></li>
+
+                                                <li><a href="http://news.ceic.ac.cn/CC20141014115137.html">2014-10-14 11:51:37 萨尔瓦多沿岸近海7.2级地震</a></li>
+
+                                            </ul>
+                    <p class="modular-more"><a href="http://news.ceic.ac.cn/zhuanti.html">更多</a></p>
+                </div><!--modular-->
+                <div class="modular">
+                    <h1 class="modular-h1">快捷查询</h1>
+                    <ul class="modular-ul">
+                        <li><a href="http://www.ceic.ac.cn/speedsearch?time=1">最近24小时内地震</a></li>
+                        <li><a href="http://www.ceic.ac.cn/speedsearch?time=2">最近48小时内地震</a></li>
+                        <li><a href="http://www.ceic.ac.cn/speedsearch?time=3">最近7天内地震</a></li>
+                        <li><a href="http://www.ceic.ac.cn/speedsearch?time=4">最近30天内地震</a></li>
+                        <li><a href="http://www.ceic.ac.cn/speedsearch?time=6">最近一年内地震</a></li>
+                    </ul>
+                </div><!--modular-->
+                <div class="modular">
+                    <h1 class="modular-h1">历史查询</h1>
+                    <form action="http://www.ceic.ac.cn/history" class="home-query" method="get">
+                        <div class="hq-group">
+                            时间：<input type="text" class="hq-text Wdate"  type="text" onFocus="WdatePicker({lang:'zh-cn'})" name="start"></div>
+                        <div class="hq-group" style="padding-left: 13px">至　<input type="text" class="hq-text Wdate"   type="text" onFocus="WdatePicker({lang:'zh-cn'})" name="end"></div>
+                        <div class="hq-group">纬度：大于 <input type="text" class="hq-text2" name="weidu1">　小于 <input type="text" class="hq-text2" name="weidu2"></div>
+                        <div class="hq-group">经度：大于 <input type="text" class="hq-text2" name="jingdu1">　小于 <input type="text" class="hq-text2" name="jingdu2"></div>
+                        <div class="hq-group">深度：大于 <input type="text" class="hq-text2" name="height1">　小于 <input type="text" class="hq-text2" name="height2"></div>
+                        <div class="hq-group">震级：大于 <input type="text" class="hq-text2" name="zhenji1">　小于 <input type="text" class="hq-text2" name="zhenji2"></div>
+                        <div class="hq-group">
+                            <input class="check2" style="float: right;margin-right: 10px" name="sub" type="submit" value="查询">
+                        </div>
+                    </form>
+                </div><!--modular-->
+
+                <div class="modular">
+                    <h1 class="modular-h1">地震活动</h1>
+                    <ul class="modular-ul">
+                        <li><a href="http://www.ceic.ac.cn/dataout">最近一周地震活动分布图</a></li>
+                        <li><a href="http://www.ceic.ac.cn/dataout">最近一月地震活动分布图</a></li>
+                    </ul>
+                    <p class="modular-more"><a href="http://www.ceic.ac.cn/dataout">更多</a></p>
+                </div><!--modular-->
+
+
+                <div class="modular">
+                    <h1 class="modular-h1">相关站点</h1>
+                    <ul class="modular-ul">
+                        <li><a href="http://www.cea.gov.cn/" target="_blank">中国地震局(CEA）</a></li>
+                        <li><a href="http://earthquake.usgs.gov/regional/neic/" target="_blank">美国国家地震信息中心（NEIC）</a></li>
+                        <li><a href="http://www.iris.edu/hq/" target="_blank">美国地震联合会（IRIS）</a></li>
+                    </ul>
+                    <p class="modular-more"><a href="http://www.ceic.ac.cn/moresites" target="_blank">更多</a></p>
+                </div><!--modular-->
+            </div><!--right-->
+        </div><!--content-->
+
+    </div><!--main-->
+
+    <div class="footer">
+        <div class="link">
+            <a href="http://www.ceic.ac.cn/statement" target="_blank">网站声明</a>
+            &nbsp;|&nbsp;
+            <a href="http://www.miibeian.gov.cn" target="_blank">京ICP备06028819-4号</a>
+            &nbsp;|&nbsp;
+            <a href="mailto:houjm@seis.ac.cn">联系我们：houjm@seis.ac.cn</a>
+        </div>
+        <p>Copyright 2009，All Rights Reserved.  中国地震台网中心 版权所有 复制必究</p>
+        <p class="mt10"><img src="http://news.ceic.ac.cn/images/sae_logo.gif" alt=""/></p>
+    </div>
+    <link type="image/x-icon" href="http://news.ceic.ac.cn/images/favorite.ico" rel="shortcut icon">
+
+</div><!--all-->
+<!--导入google地图 API js文件-->
+<!-- <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>-->
+    <script type="text/javascript" src="http://news.ceic.ac.cn/js.js"></script>
+<!--    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+<!--<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>-->
+<script type="text/javascript" src="http://news.ceic.ac.cn/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="http://news.ceic.ac.cn/js/base.js"></script>
+<!--    导入百度地图api js-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<!--    导入天地图-->
+<!-- <script language="javascript" src="http://api.tianditu.com/js/maps.js?&tk=d3ba713ebb57a46f4c10d102eb7fbaae"></script> -->
+<script type="text/javascript" src="http://api.tianditu.gov.cn/api?v=3.0&tk=d3ba713ebb57a46f4c10d102eb7fbaae"></script>
+<script type="text/javascript" src="http://news.ceic.ac.cn/js/ditu.min.js?v=1.0"></script>
+<!--<script type="text/javascript" src="http://dizhentai.sinaapp.com/js/dtest.js"></script>-->
+<script type="text/javascript" src="http://news.ceic.ac.cn/js/WdatePicker.js"></script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe0025cd5d352165f8a646ccea5beb27d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41117364-1', 'sinaapp.com');
+    ga('send', 'pageview');
+
+</script>
+   
+
+</body>
+</html>
